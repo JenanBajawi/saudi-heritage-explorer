@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# المتحف الذكي للمعالم الأثرية في السعودية
+### Saudi Heritage Explorer | 3D Digital Museum & AI Agent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+متحف رقمي تفاعلي ثلاثي الأبعاد يعمل في المتصفح ونظارات الواقع الافتراضي (VR)، يستعرض المعالم الأثرية والتاريخية في المملكة العربية السعودية، مع وكيل ذكاء اصطناعي يعمل دليلًا للزوار.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## تشغيل المشروع على جهازك
 
 ```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+npm install
+npm run dev
 ```
+
+ثم افتحي الرابط `http://localhost:5173`
+
+---
+
+## خريطة المشروع: وين أحط ملفاتي؟
+
+| المجلد | وش فيه | المسؤول |
+|---|---|---|
+| `src/museum/` | المشهد الرئيسي، البهو، الممرات، الإضاءة | المهمة 1 (البيئة والدمج) |
+| `src/navigation/` | التنقل على الكمبيوتر وفي VR | المهمة 1 |
+| `src/api/` | أوامر المتحف اللي يستخدمها الوكيل الذكي | المهمة 1 |
+| `src/types/` | الاتفاقيات المشتركة بين كل الفرق | المهمة 1 (أي تعديل بموافقتها) |
+| `src/rooms/najd/` و `src/rooms/hijaz/` | قاعتا نجد والحجاز | المهمة 1 + محتوى المهمة 3 |
+| `src/rooms/north/` و `south/` و `east/` | قاعات الشمال والجنوب والشرقية | المهمة 1 + محتوى المهمة 2 |
+| `src/rooms/fashion/` | غرفة الأزياء | المهمة 5 |
+| `src/data/` | بيانات المعالم والمناطق والمصادر | المهمتان 2 و 3 |
+| `src/features/ai-agent/` | الوكيل الذكي | المهمة 6 |
+| `src/components/` | أزرار ولوحات مشتركة | الجميع |
+| `public/models/landmarks/` | مجسمات المعالم `.glb` | المهمة 4 |
+| `public/models/fashion/` | مجسمات وأزياء الغرفة | المهمة 5 |
+| `public/images/` | صور المعالم والأزياء | المهمات 2، 3، 5 |
+| `public/textures/` | خامات الجدران والأرضيات | المهمة 1 |
+| `public/audio/` | الأصوات والموسيقى | المهمة 1 |
+| `docs/` | أدلة العمل لكل الفرق | المهمة 1 |
+
+> كل مجلد فيه ملف `README.md` يشرح بالتفصيل وش ينحط فيه.
+
+---
+
+## الأدلة — اقرئي اللي يخص مهمتك
+
+| الدليل | لمين |
+|---|---|
+| [دليل Git للمبتدئات](docs/GIT_GUIDE.md) | **الجميع — ابدئي من هنا** |
+| [دليل الدمج](docs/INTEGRATION_GUIDE.md) | الجميع |
+| [بنية البيانات](docs/DATA_SCHEMA.md) | المهمتان 2، 3، 4، 6 |
+| [دليل المجسمات](docs/MODELS_GUIDE.md) | المهمتان 4، 5 |
+| [دليل الوكيل الذكي](docs/AI_AGENT_GUIDE.md) | المهمة 6 |
+
+---
+
+## القواعد الذهبية
+
+1. **لا ترفعين على `main` مباشرة.** اشتغلي على فرعك، وافتحي Pull Request.
+2. **اشتغلي داخل مجلد مهمتك فقط.** إذا احتجتِ تعدلين شيء خارجه، اسألي مسؤولة الدمج.
+3. **كل معلم له معرّف (id) واحد** يُستخدم في البيانات واسم المجسم والوكيل.
+4. **كل معلومة لها مصدر موثوق.**
+5. **لا تضعين أي مفتاح API أو كلمة مرور في المستودع.** المستودع عام.
+6. **جرّبي شغلك قبل ما ترفعينه.**

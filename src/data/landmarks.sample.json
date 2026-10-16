@@ -1,0 +1,17 @@
+[
+  {
+    "id": "hegra-qasr-al-farid",
+    "regionId": "north",
+    "nameAr": "قصر الفريد",
+    "nameEn": "Qasr al-Farid",
+    "aliases": ["القصر الفريد", "قصر الفريد بالحجر", "مقبرة لحيان بن كوزا"],
+    "summaryAr": "من أشهر مقابر موقع الحِجر النبطي في العلا، نُحت في كتلة صخرية منفردة، ولم يكتمل نحت واجهته.",
+    "period": "القرن الأول الميلادي",
+    "location": "الحِجر، محافظة العلا",
+    "modelUrl": "/models/landmarks/hegra-qasr-al-farid.glb",
+    "sources": [
+      { "title": "UNESCO — Hegra Archaeological Site (al-Hijr / Mada in Salih)", "url": "https://whc.unesco.org/en/list/1293" }
+    ],
+    "disclaimerAr": "مثال توضيحي لبنية البيانات. يراجع فريق المحتوى المعلومات قبل اعتمادها."
+  }
+]
